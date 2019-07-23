@@ -22,6 +22,7 @@ secondaryextinction<-function(originalnet,type,r,n)
 		nbasal<-noriginalbasal;
 		names_basals<-names_originalbasals;
 		names<-V(net)$id
+		v_labels<-V(net)$id
 		if(type == 1){species<-V(net)[order(degree(net,mode="in"),decreasing=TRUE)];}#the order of primary extinction - #1--->MorePreyFirst
 		else if(type == 2){species<-V(net)[order(degree(net,mode="out"),decreasing=TRUE)];}#the order of primary extinction - #1--->MorePredatorsFirst
 		names_species<-V(net)$id[species]
