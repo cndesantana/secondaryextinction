@@ -1,0 +1,23 @@
+dat <- read.csv2("Output_specieswithmoreprey_secext_variables_real_2_B1.dat")
+dat
+plot(dat$PrimExt,dat$CumSecExt)
+plot(dat$PrimExt,dat$CumSecExt,type="l")
+sum(dat$CumSecExt)
+cumsum(dat$CumSecExt)
+plot(dat$PrimExt,cumsum(dat$CumSecExt))
+plot(dat$PrimExt,cumsum(dat$CumSecExt),type="b")
+plot(dat$PrimExt/55,cumsum(dat$CumSecExt),type="b")
+plot(dat$PrimExt/55*100,cumsum(dat$CumSecExt),type="b")
+plot(dat$PrimExt/55*100,cumsum(dat$CumSecExt)/55*100,type="b")
+plot(dat$PrimExt/66*100,cumsum(dat$CumSecExt)/66*100,type="b")
+plot(dat$PrimExt/66*100,cumsum(dat$CumSecExt)/66*100,type="b",xlim=c(0,100))
+?abline
+?lines
+?abline
+?abline
+data.frame(x=c(0,100),y=c(100,0))
+lm(data=data.frame(x=c(0,100),y=c(100,0)),y~x)
+abline(lm(data=data.frame(x=c(0,100),y=c(100,0)),y~x))
+plot(dat$PrimExt/66*100,cumsum(dat$CumSecExt)/66*100,type="b",xlim=c(0,100),ylim=c(0,100))
+abline(lm(data=data.frame(x=c(0,100),y=c(100,0)),y~x))
+savehistory("log.R")
